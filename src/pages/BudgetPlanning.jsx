@@ -64,8 +64,8 @@ const BudgetPlanning = () => {
                     <PieChart className="w-8 h-8" />
                 </div>
                 <div>
-                    <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Budget Planner</h1>
-                    <p className="text-slate-500 dark:text-slate-400">Allocate your monthly income proactively</p>
+                    <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Monthly Budget Planner</h1>
+                    <p className="text-slate-500 dark:text-slate-400">Allocate your monthly income proactively</p>	
                 </div>
             </div>
 
