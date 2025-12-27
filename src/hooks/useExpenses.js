@@ -120,7 +120,11 @@ export const useExpenses = () => {
             return { success: true };
         } catch (error) {
             console.error("Error adding expense:", error);
-            return { success: false, message: error.message };
+            return {
+    		success: false,
+    		message: error.response?.data?.message || "Failed to save budget"
+	    };
+
         }
     };
 

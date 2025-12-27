@@ -37,7 +37,7 @@ const BudgetProgress = ({ category, spent, limit, delay = 0 }) => {
                         ₹{spent.toLocaleString()}
                     </span>
                     <span className="text-xs text-slate-400 block">
-                        {percentage.toFixed(0)}%
+                        Category Limit Usage: {percentage.toFixed(0)}%
                     </span>
                 </div>
             </div>
