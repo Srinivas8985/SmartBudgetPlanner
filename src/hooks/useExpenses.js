@@ -105,6 +105,7 @@ export const useExpenses = () => {
             setBudget(data);
             return { success: true };
         } catch (error) {
+            // Test case: API failure or unauthorized access
             console.error("Error saving budget:", error);
             return { success: false, message: error.message };
         }
