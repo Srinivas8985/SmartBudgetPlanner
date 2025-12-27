@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+// Validation: Prevent negative or zero expense values before submission
 const ExpenseForm = ({ onAddExpense }) => {
     const [title, setTitle] = useState('');
     const [amount, setAmount] = useState('');
