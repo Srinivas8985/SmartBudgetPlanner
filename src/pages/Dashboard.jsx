@@ -54,7 +54,7 @@ const Dashboard = () => {
             {/* Header */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-4xl font-bold mb-2 text-slate-900 dark:text-white">Budget Overview</h1>
+                    <h1 className="text-4xl font-bold mb-2 text-slate-900 dark:text-white">Smart Budget Dashboard (experimental)</h1>
                     <p className="text-slate-500 dark:text-slate-400">
                         Monitoring month: <span className='text-teal-500 font-semibold'>{new Date().toLocaleString('default', { month: 'long', year: 'numeric' })}</span>
                     </p>
