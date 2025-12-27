@@ -86,3 +86,6 @@ This project follows a structured Git workflow as part of the Version Control Sy
 - Multiple commits were created to represent incremental development.
 - Merge operations and a merge conflict were intentionally demonstrated and resolved.
 - The complete project history is maintained on GitHub.
+
+- <img width="1029" height="395" alt="Screenshot 2025-12-27 114808" src="https://github.com/user-attachments/assets/0e2298f3-f271-4eac-a2a3-a6c53f94d59e" />
+
