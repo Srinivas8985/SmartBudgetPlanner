@@ -70,7 +70,7 @@ export const useExpenses = () => {
         const categoryStatus = {};
         if (budget.categoryLimits) {
             Object.keys(budget.categoryLimits).forEach(cat => {
-                const limit = budget.categoryLimits[cat];
+                const limit = budget.categoryLimits[cat] || 0;
                 const spent = categoryUsage[cat] || 0;
                 categoryStatus[cat] = {
                     limit,
@@ -83,7 +83,7 @@ export const useExpenses = () => {
 
         setBudgetHealth({
             totalSpent,
-            remaining: budget.totalBudget - totalSpent,
+            remaining: Math.max(budget.totalBudget - totalSpent, 0),
             percentage: budget.totalBudget > 0 ? (totalSpent / budget.totalBudget) * 100 : 0,
             categoryUsage, // Raw usage
             categoryStatus // Usage vs Limit
