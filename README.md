@@ -76,4 +76,13 @@ This project differentiates itself from standard tutorials by:
 *   Prioritizing UI/UX that reinforces financial discipline (Planning Page) rather than just data entry.
 
 ---
-*Developed for [University Course Code/Name] - [Semester Year]*
+*Developed for Lovely Professional University/INT331 5th Semester*
+## 8. Version Control & Git Workflow
+
+This project follows a structured Git workflow as part of the Version Control Systems coursework.
+
+- Git was initialized locally using Git Bash.
+- Feature-based branching strategy was followed (`feature`, `test`, `bugfix`, `experiment`).
+- Multiple commits were created to represent incremental development.
+- Merge operations and a merge conflict were intentionally demonstrated and resolved.
+- The complete project history is maintained on GitHub.
