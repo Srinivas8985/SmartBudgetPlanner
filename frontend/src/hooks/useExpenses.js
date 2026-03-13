@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext.jsx';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export const useExpenses = () => {
     const [expenses, setExpenses] = useState([]);
     const [budget, setBudget] = useState({
@@ -33,10 +35,10 @@ export const useExpenses = () => {
             const currentYear = new Date().getFullYear();
 
             // Fetch Expenses
-            const expensesRes = await axios.get('http://localhost:5000/api/expenses', config);
+            const expensesRes = await axios.get(`${API_URL}/api/expenses`, config);
 
             // Fetch Budget
-            const budgetRes = await axios.get(`http://localhost:5000/api/budget?month=${currentMonth}&year=${currentYear}`, config);
+            const budgetRes = await axios.get(`${API_URL}/api/budget?month=${currentMonth}&year=${currentYear}`, config);
 
             setExpenses(expensesRes.data);
             setBudget(budgetRes.data.totalBudget ? budgetRes.data : {
@@ -101,7 +103,7 @@ export const useExpenses = () => {
                 month: new Date().getMonth(),
                 year: new Date().getFullYear()
             };
-            const { data } = await axios.post('http://localhost:5000/api/budget', payload, config);
+            const { data } = await axios.post(`${API_URL}/api/budget`, payload, config);
             setBudget(data);
             return { success: true };
         } catch (error) {
@@ -116,7 +118,7 @@ export const useExpenses = () => {
             const config = {
                 headers: { Authorization: `Bearer ${user.token}` },
             };
-            const { data } = await axios.post('http://localhost:5000/api/expenses', expenseData, config);
+            const { data } = await axios.post(`${API_URL}/api/expenses`, expenseData, config);
             setExpenses((prev) => [data, ...prev]);
             return { success: true };
         } catch (error) {
@@ -134,7 +136,7 @@ export const useExpenses = () => {
             const config = {
                 headers: { Authorization: `Bearer ${user.token}` },
             };
-            await axios.delete(`http://localhost:5000/api/expenses/${id}`, config);
+            await axios.delete(`${API_URL}/api/expenses/${id}`, config);
             setExpenses((prev) => prev.filter((exp) => exp._id !== id));
         } catch (error) {
             console.error("Error deleting expense:", error);
